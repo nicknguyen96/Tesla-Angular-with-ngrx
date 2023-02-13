@@ -1,0 +1,22 @@
+p {
+  font-family: Lato;
+}
+
+.card {
+  border: 1px solid black;
+  margin: 5px 0;
+  padding: 5px;
+  text-align: center;
+}
+
+input {
+  width: 98%;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card.selected {
+  border: 1px solid red;
+}

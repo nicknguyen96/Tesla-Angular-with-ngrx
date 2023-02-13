@@ -1,0 +1,18 @@
+<div class="card" *ngIf="this.selectedBook$ | async as book">
+  <p>Title : {{ book.title }}</p>
+  <span *ngFor="let author of book.author">
+    {{ author }}
+  </span>
+</div>
+<input type="text" [(ngModel)]="keyword" (ngModelChange)="onChange()" />
+<ng-container *ngFor="let book of filterBooks$ | async; let index = index">
+  <div
+    [class]="index == (selectedIndex$ | async) ? 'card selected' : 'card'"
+    (click)="onSelected(index)"
+  >
+    <p>Title : {{ book.title }}</p>
+    <span *ngFor="let author of book.author">
+      {{ author }}
+    </span>
+  </div>
+</ng-container>
